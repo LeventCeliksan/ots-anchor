@@ -1,14 +1,14 @@
 # ots-anchor
 
-Timestamp any file on Bitcoin **with no transaction fees** using [OpenTimestamps](https://opentimestamps.org), and verify proofs against **real Bitcoin block headers** (via a public Esplora API — no local node needed).
+Timestamp any file on Bitcoin **with no transaction fees** using [OpenTimestamps](https://opentimestamps.org), and verify proofs against **real Bitcoin block headers** (via a public Esplora API, no local node needed).
 
 This is a small, standalone version of the proof-of-existence approach I use in production at [Sealify](https://sealify.io), where 1,600+ registrations are anchored on Bitcoin mainnet. It is written from scratch as an independent tool and does not contain Sealify code.
 
 ## How it works
-1. **stamp** — the file's SHA-256 is sent to several public OpenTimestamps calendars (the file itself never leaves your machine). A pending `.ots` proof is written.
-2. The calendars aggregate thousands of hashes into one Merkle tree and commit its root in a single Bitcoin transaction — so each file costs nothing.
-3. **upgrade** — after a few hours, fetch the completed path from your hash to the Bitcoin block.
-4. **verify** — recompute the file hash, replay the proof, and check the result equals the Merkle root of the actual Bitcoin block.
+1. **stamp**: the file's SHA-256 is sent to several public OpenTimestamps calendars (the file itself never leaves your machine). A pending `.ots` proof is written.
+2. The calendars aggregate thousands of hashes into one Merkle tree and commit its root in a single Bitcoin transaction, so each file costs nothing.
+3. **upgrade**: after a few hours, fetch the completed path from your hash to the Bitcoin block.
+4. **verify**: recompute the file hash, replay the proof, and check the result equals the Merkle root of the actual Bitcoin block.
 
 ## Install
 ```bash
