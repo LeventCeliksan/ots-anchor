@@ -1,0 +1,22 @@
+[project]
+name = "ots-anchor"
+version = "0.1.0"
+description = "Timestamp files on Bitcoin with OpenTimestamps and verify them against real block headers"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Levent Çeliksan"}]
+dependencies = ["opentimestamps>=0.4.5", "requests>=2.28"]
+
+[project.scripts]
+ots-anchor = "ots_anchor.cli:main"
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["ots_anchor"]
+
+[tool.pytest.ini_options]
+markers = ["network: needs internet (Bitcoin block data / calendars)"]
