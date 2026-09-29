@@ -1,5 +1,7 @@
 # ots-anchor
 
+[![tests](https://github.com/LeventCeliksan/ots-anchor/actions/workflows/tests.yml/badge.svg)](https://github.com/LeventCeliksan/ots-anchor/actions/workflows/tests.yml)
+
 Timestamp any file on Bitcoin **with no transaction fees** using [OpenTimestamps](https://opentimestamps.org), and verify proofs against **real Bitcoin block headers** (via a public Esplora API, no local node needed).
 
 This is a small, standalone version of the proof-of-existence approach I use in production at [Sealify](https://sealify.io), where 1,600+ registrations are anchored on Bitcoin mainnet. It is written from scratch as an independent tool and does not contain Sealify code.
